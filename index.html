@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filé Miau Espetinhos | Matelândia - PR</title>
+<meta name="description" content="Filé Miau Espetinhos em Matelândia - PR. Espetinho saboroso e suculento a partir de R$ 11,90. Salão e delivery de terça a domingo, das 18h às 23h.">
+<meta name="theme-color" content="#140c09">
+<meta property="og:title" content="Filé Miau Espetinhos">
+<meta property="og:description" content="Espetinho saboroso e suculento em Matelândia - PR. Peça pelo WhatsApp: (45) 99937-8533.">
+<meta property="og:image" content="assets/logo.jpg">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="apple-touch-icon" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#140c09;          /* fundo madeira escura */
+    --bg-2:#1d120d;        /* superfície */
+    --bg-3:#2a1912;        /* superfície elevada */
+    --red:#c3161c;         /* vermelho dos títulos "AQUI TEM SABOR" */
+    --red-deep:#7e1012;    /* vinho dos posts de cardápio */
+    --orange:#f28a0f;      /* laranja das chamas */
+    --yellow:#ffd21a;      /* amarelo da logo */
+    --white:#ffffff;
+    --text:#f5ece6;
+    --muted:#bfaea4;
+    --line:rgba(255,255,255,.09);
+    --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+    --body:'Poppins', system-ui, sans-serif;
+    --radius:18px;
+    --pill:999px;
+    --container:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+  section{position:relative}
+  :focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+
+  /* ---------- tipografia ---------- */
+  .display{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.5px}
+  .eyebrow{display:inline-block;font-family:var(--display);text-transform:uppercase;letter-spacing:2px;font-size:15px;color:var(--white);background:var(--red);padding:6px 14px;transform:rotate(-2deg);box-shadow:4px 4px 0 rgba(0,0,0,.35)}
+  .eyebrow.light{background:var(--white);color:var(--red)}
+  .h2{font-size:clamp(40px,5.6vw,68px)}
+  .h2 .red{color:var(--red)} .h2 .yellow{color:var(--yellow)} .h2 .orange{color:var(--orange)}
+  .lead{color:var(--muted);font-size:17px;max-width:560px}
+  .section-head{text-align:center;margin-bottom:56px;display:flex;flex-direction:column;align-items:center;gap:18px}
+  .section-head .lead{margin:0 auto}
+
+  /* ---------- botões ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);text-transform:uppercase;letter-spacing:1px;font-size:20px;padding:14px 30px;border-radius:var(--pill);transition:transform .2s ease, box-shadow .2s ease, background .2s ease;cursor:pointer;border:0}
+  .btn svg{width:22px;height:22px;flex:none}
+  .btn-primary{background:linear-gradient(180deg,var(--yellow),var(--orange));color:var(--red-deep);box-shadow:0 10px 30px -8px rgba(242,138,15,.6)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(242,138,15,.75)}
+  .btn-white{background:var(--white);color:var(--red-deep)}
+  .btn-white:hover{transform:translateY(-2px)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.25);color:var(--white)}
+  .btn-ghost:hover{border-color:var(--yellow);color:var(--yellow)}
+
+  /* telefone no estilo dos posts */
+  .phone{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-weight:800;font-size:clamp(26px,3.4vw,40px);letter-spacing:-1px;color:var(--white)}
+  .phone .ico{width:1.15em;height:1.15em;border-radius:50%;background:var(--white);display:grid;place-items:center;flex:none}
+  .phone .ico svg{width:58%;height:58%;fill:var(--orange)}
+  .phone:hover{color:var(--yellow)}
+
+  /* ---------- brasas ---------- */
+  .embers{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .embers span{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:var(--orange);box-shadow:0 0 6px 2px rgba(242,138,15,.7);opacity:0;animation:rise linear infinite}
+  @keyframes rise{0%{transform:translate(0,0);opacity:0}10%{opacity:1}100%{transform:translate(var(--dx,20px),-110vh);opacity:0}}
+  @media (prefers-reduced-motion:reduce){.embers{display:none}*{animation:none!important;transition:none!important}}
+
+  /* ---------- header ---------- */
+  .header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease, box-shadow .3s ease}
+  .header.scrolled{background:rgba(20,12,9,.92);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:56px;height:56px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--yellow), 0 4px 14px rgba(0,0,0,.5)}
+  .brand b{font-family:var(--display);font-weight:400;font-size:24px;letter-spacing:1px;text-transform:uppercase;color:var(--yellow);line-height:1}
+  .brand small{display:block;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .menu{display:flex;gap:30px;list-style:none}
+  .menu a{font-weight:600;font-size:14px;color:var(--text);position:relative;padding:6px 0}
+  .menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--orange);transition:width .2s ease}
+  .menu a:hover::after,.menu a.active::after{width:100%}
+  .menu a.active{color:var(--yellow)}
+  .nav .btn{font-size:17px;padding:11px 22px}
+  .burger{display:none;background:none;border:0;color:var(--white);width:44px;height:44px;cursor:pointer}
+  .burger svg{width:28px;height:28px}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:min(100vh,940px);min-height:min(100svh,940px);display:flex;align-items:center;padding:130px 0 90px;overflow:hidden;
+    background:
+      radial-gradient(ellipse 60% 55% at 72% 55%, rgba(242,138,15,.28), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 70% 110%, rgba(195,22,28,.45), transparent 70%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 2px, transparent 2px 140px),
+      linear-gradient(180deg,#1a0f0b 0%, #120a07 100%)}
+  .hero-grid > *{min-width:0}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:2}
+  .hero h1{font-size:clamp(56px,8.4vw,112px);color:var(--white);margin:22px 0 26px}
+  .hero h1 .red{color:var(--red);-webkit-text-stroke:0}
+  .hero h1 .outline{color:transparent;-webkit-text-stroke:2px var(--yellow)}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:34px}
+  .tag-white{background:var(--white);color:var(--red-deep);font-family:var(--display);text-transform:uppercase;font-size:20px;letter-spacing:.5px;padding:8px 22px;border-radius:var(--pill)}
+  .tag-red{background:var(--red-deep);color:var(--white);font-family:var(--display);text-transform:uppercase;font-size:20px;letter-spacing:.5px;padding:8px 22px;border-radius:var(--pill);border:2px solid rgba(255,255,255,.15)}
+  .tag-red b{color:var(--yellow);font-weight:400}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:34px}
+  .hero-info{display:flex;flex-direction:column;gap:6px}
+  .hero-info .addr{color:var(--muted);font-size:15px;display:flex;align-items:center;gap:8px}
+  .hero-info .addr svg{width:18px;height:18px;fill:var(--orange);flex:none}
+  .hero-art{position:relative;display:grid;place-items:center}
+  .hero-art .halo{position:absolute;width:88%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, rgba(255,210,26,.35), rgba(242,138,15,.15) 45%, transparent 70%);filter:blur(10px);animation:pulse 4s ease-in-out infinite}
+  @keyframes pulse{50%{transform:scale(1.06);opacity:.8}}
+  .hero-art .logo-big{position:relative;width:min(520px,100%);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;border:6px solid rgba(255,255,255,.9);box-shadow:0 30px 80px -10px rgba(0,0,0,.8), 0 0 0 14px rgba(195,22,28,.35);animation:float 6s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-12px)}}
+  .hero-art .badge{position:absolute;right:2%;top:4%;width:132px;height:132px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;text-align:center;font-family:var(--display);text-transform:uppercase;line-height:1;transform:rotate(-12deg);box-shadow:0 12px 30px rgba(0,0,0,.5);border:3px dashed rgba(255,255,255,.55)}
+  .hero-art .badge small{display:block;font-size:14px;letter-spacing:1px}
+  .hero-art .badge strong{display:block;font-weight:400;font-size:34px;color:var(--yellow)}
+
+  /* ---------- faixa ---------- */
+  .strip{background:var(--yellow);color:var(--red-deep);overflow:hidden;margin:0;position:relative;z-index:5;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .strip-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
+  .strip-track span{font-family:var(--display);text-transform:uppercase;font-size:24px;letter-spacing:1px;padding:14px 26px;white-space:nowrap;display:flex;align-items:center;gap:26px}
+  .strip-track span::after{content:"✦";color:var(--red)}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* ---------- serviços ---------- */
+  .services{padding:130px 0 110px}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .card{background:linear-gradient(180deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+  .card::before{content:"";position:absolute;inset:auto -40% -60% -40%;height:70%;background:radial-gradient(ellipse at center, rgba(242,138,15,.22), transparent 70%);opacity:0;transition:opacity .3s ease}
+  .card:hover{transform:translateY(-6px);border-color:rgba(242,138,15,.5)}
+  .card:hover::before{opacity:1}
+  .card .icon{width:58px;height:58px;border-radius:50%;background:var(--red);display:grid;place-items:center;margin-bottom:22px;box-shadow:0 0 0 6px rgba(195,22,28,.18)}
+  .card .icon svg{width:28px;height:28px;fill:var(--white)}
+  .card h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:28px;color:var(--white);letter-spacing:.5px;line-height:1.05;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px;position:relative}
+  .card .pill{display:inline-block;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--yellow);border:1px solid rgba(255,210,26,.35);padding:4px 12px;border-radius:var(--pill)}
+
+  /* ---------- cardápio (bloco vinho estilo post) ---------- */
+  .menu-sec{background:linear-gradient(135deg,var(--red-deep) 0%, #5a0b0c 100%);overflow:hidden;padding:110px 0}
+  .menu-sec::before{content:"ESPETINHO";position:absolute;top:30px;left:-20px;font-family:var(--display);font-size:clamp(120px,20vw,280px);line-height:1;color:rgba(0,0,0,.12);white-space:nowrap;pointer-events:none}
+  .menu-sec::after{content:"";position:absolute;right:-180px;bottom:-220px;width:620px;height:620px;border-radius:50%;background:linear-gradient(160deg,var(--yellow),var(--orange));opacity:.95}
+  .menu-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center;position:relative;z-index:2}
+  .menu-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:3/5;max-height:620px;box-shadow:0 30px 60px -10px rgba(0,0,0,.6);border:4px solid rgba(255,255,255,.12)}
+  .menu-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+  .menu-photo:hover img{transform:scale(1.05)}
+  .menu-copy .h2{color:var(--white);margin:18px 0 22px}
+  .menu-copy .h2 .yellow{color:var(--yellow)}
+  .checks{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0 0 30px}
+  .checks li{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;color:var(--white)}
+  .checks li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--yellow);flex:none;box-shadow:0 0 0 4px rgba(255,210,26,.2)}
+  .flavors{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+  .flavors span{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15);color:var(--white);padding:8px 18px;border-radius:var(--pill);font-weight:600;font-size:14px}
+  .price-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+
+  /* ---------- quem somos ---------- */
+  .about{padding:120px 0}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .about-photos{position:relative;padding:0 0 70px 0}
+  .about-photos .p1{border-radius:var(--radius);overflow:hidden;aspect-ratio:678/310;box-shadow:0 30px 60px -15px rgba(0,0,0,.7)}
+  .about-photos .p2{position:absolute;right:-6%;bottom:0;width:62%;border-radius:var(--radius);overflow:hidden;aspect-ratio:680/315;border:5px solid var(--bg);box-shadow:0 20px 50px -10px rgba(0,0,0,.8)}
+  .about-photos img{width:100%;height:100%;object-fit:cover}
+  .about-photos .sticker{position:absolute;left:-14px;bottom:24px;transform:rotate(-4deg);z-index:2}
+  .about-copy .h2{margin:18px 0 24px;color:var(--white)}
+  .about-copy p{color:var(--muted);margin-bottom:16px;font-size:16px}
+  .about-copy p strong{color:var(--text)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  .stat{border-left:3px solid var(--orange);padding:4px 0 4px 16px}
+  .stat b{display:block;font-family:var(--display);font-weight:400;font-size:40px;line-height:1;color:var(--yellow)}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  /* ---------- avaliações ---------- */
+  .reviews{padding:20px 0 120px}
+  .stars{color:var(--yellow);font-size:26px;letter-spacing:4px;margin:6px 0 8px}
+  .reviews .section-head{gap:14px}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .quote header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .quote header b{display:block;color:var(--white);font-size:15px;line-height:1.2}
+  .quote header small{color:var(--muted);font-size:12.5px}
+  .avatar{width:42px;height:42px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font-weight:700;flex:none}
+  .quote .stars{font-size:16px;letter-spacing:2px;margin:0 0 10px}
+  .quote p{color:var(--text);font-size:16px;font-weight:500}
+  .quote p.meta{color:var(--muted);font-size:14px;font-weight:500}
+  .quote.quote-cta{display:flex;flex-direction:column;justify-content:center;gap:8px;background:linear-gradient(160deg,var(--red-deep),#4a090a);transition:transform .25s ease}
+  .quote-cta:hover{transform:translateY(-4px)}
+  .quote-cta b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:30px;color:var(--yellow);line-height:1}
+  .quote-cta span{color:var(--white);font-weight:600;font-size:15px}
+  .quote{background:var(--bg-3);border-radius:var(--radius);padding:26px;border:1px solid var(--line)}
+
+  /* ---------- CTA "BORA?" ---------- */
+  .cta{padding:0 0 120px}
+  .cta-box{position:relative;border-radius:28px;overflow:hidden;min-height:420px;display:flex;align-items:center;padding:64px}
+  .cta-box > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .cta-box::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(20,12,9,.95) 0%, rgba(20,12,9,.8) 45%, rgba(20,12,9,.15) 100%);z-index:1}
+  .cta-content{position:relative;z-index:2;max-width:560px}
+  .cta-content .bora{font-family:var(--display);text-transform:uppercase;font-size:clamp(44px,6vw,72px);line-height:1;color:var(--white);margin-bottom:4px}
+  .cta-content .turma{font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,5.4vw,64px);line-height:1;color:var(--orange);margin-bottom:12px}
+  .cta-content .merece{display:inline-block;background:var(--red);color:var(--white);font-family:var(--display);text-transform:uppercase;font-size:20px;letter-spacing:1px;padding:6px 14px;transform:rotate(-2deg);margin-bottom:34px}
+  .cta-content .row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:0 0 120px}
+  .faq-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq details{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);transition:border-color .2s ease}
+  .faq details[open]{border-color:rgba(242,138,15,.5)}
+  .faq summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-weight:700;font-size:17px;color:var(--white)}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .plus{width:34px;height:34px;border-radius:50%;background:var(--red);display:grid;place-items:center;flex:none;transition:transform .25s ease}
+  .faq summary .plus::before{content:"+";font-size:22px;line-height:1;color:var(--white);font-weight:600}
+  .faq details[open] .plus{transform:rotate(45deg);background:var(--orange)}
+  .faq .answer{padding:0 26px 24px;color:var(--muted);font-size:15.5px}
+  .faq .answer a{color:var(--yellow);font-weight:600}
+
+  /* ---------- localização ---------- */
+  .location{padding:0 0 120px}
+  .loc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
+  .loc-card{background:linear-gradient(160deg,var(--red-deep),#4a090a);border-radius:28px;padding:48px 40px;display:flex;flex-direction:column;gap:26px}
+  .loc-card .h2{color:var(--white);font-size:clamp(40px,4.6vw,58px)}
+  .loc-item{display:flex;gap:16px;align-items:flex-start}
+  .loc-item .i{width:46px;height:46px;border-radius:50%;background:var(--white);display:grid;place-items:center;flex:none}
+  .loc-item .i svg{width:22px;height:22px;fill:var(--red)}
+  .loc-item b{display:block;font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:1px;font-size:20px;color:var(--yellow);line-height:1.2}
+  .loc-item span{color:var(--white);font-size:15.5px}
+  .loc-card .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto}
+  .loc-card .btn{font-size:18px;padding:12px 24px}
+  .map{border-radius:28px;overflow:hidden;min-height:440px;border:1px solid var(--line);background:var(--bg-2)}
+  .map iframe{width:100%;height:100%;min-height:440px;border:0;filter:grayscale(.2) contrast(1.05)}
+
+  /* ---------- footer ---------- */
+  .footer{background:#0d0806;border-top:1px solid var(--line);padding:64px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+  .foot-grid h4{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:1px;color:var(--yellow);font-size:20px;margin-bottom:16px}
+  .foot-grid p,.foot-grid li{color:var(--muted);font-size:14.5px}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .foot-grid a:hover{color:var(--yellow)}
+  .foot-brand p{margin-top:16px;max-width:300px}
+  .socials{display:flex;gap:10px;margin-top:20px}
+  .socials a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .2s ease,border-color .2s ease}
+  .socials a:hover{background:var(--red);border-color:var(--red)}
+  .socials svg{width:20px;height:20px;fill:var(--white)}
+  .copy{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:#7d6b61;font-size:13px}
+
+  /* ---------- instagram ---------- */
+  .nav-actions{display:flex;align-items:center;gap:12px}
+  .nav-ig{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;transition:background .2s ease,border-color .2s ease}
+  .nav-ig svg{width:20px;height:20px;fill:var(--white)}
+  .nav-ig:hover{background:var(--red);border-color:var(--red)}
+  .insta{padding:0 0 120px}
+  .insta-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:36px}
+  .insta-head .h2{margin:18px 0 14px;color:var(--white)}
+  .ig-profile{display:flex;align-items:center;gap:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:var(--pill);padding:10px 12px 10px 10px;flex:none;transition:border-color .2s ease}
+  .ig-profile:hover{border-color:rgba(242,138,15,.6)}
+  .ig-ring{width:64px;height:64px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,var(--yellow),var(--orange),var(--red),#c13584,var(--yellow));flex:none}
+  .ig-ring img{width:100%;height:100%;border-radius:50%;border:3px solid var(--bg-2)}
+  .ig-profile b{display:block;color:var(--white);font-size:16px;line-height:1.2}
+  .ig-profile small{color:var(--muted);font-size:13px}
+  .ig-follow{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--orange),var(--red));color:var(--white);font-family:var(--display);text-transform:uppercase;letter-spacing:1px;font-size:17px;padding:10px 20px;border-radius:var(--pill);margin-left:8px}
+  .ig-follow svg{width:18px;height:18px;fill:currentColor}
+  .ig-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  .ig-grid a{position:relative;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--bg-2)}
+  .ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .ig-grid a::after{content:"";position:absolute;inset:0;background:rgba(20,12,9,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.2 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.1c-.1-1.6-.4-3-1.6-4.2S17.7 1.3 16.1 1.2C14.4 1.1 9.6 1.1 7.9 1.2 6.3 1.3 4.9 1.6 3.7 2.8S2.1 5.5 2 7.1C1.9 8.8 1.9 13.6 2 15.3c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.7.1 6.5.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.2-1.7.2-6.5.1-8.2zm-2.2 10.4a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.8.4s-4.5.1-5.8-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.8s-.1-4.5.4-5.8a3.3 3.3 0 0 1 1.9-1.9c1.3-.5 4.4-.4 5.8-.4s4.5-.1 5.8.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.8s.1 4.5-.4 5.8z'/%3E%3C/svg%3E") center/34px no-repeat;opacity:0;transition:opacity .25s ease}
+  .ig-grid a:hover::after{opacity:1}
+  .ig-grid a:hover img{transform:scale(1.06)}
+  @media (max-width:920px){
+    .insta-head{flex-direction:column;align-items:flex-start}
+    .ig-grid{grid-template-columns:repeat(3,1fr)}
+    .ig-grid a:nth-child(n+4){display:none}
+  }
+  @media (max-width:600px){
+    .insta{padding:0 0 90px}
+    .nav-ig{width:40px;height:40px}
+    .ig-profile{width:100%;gap:10px}
+    .ig-profile b{font-size:14px}
+    .ig-ring{width:52px;height:52px}
+    .ig-follow{margin-left:auto;padding:9px 14px;font-size:15px}
+    .ig-grid{grid-template-columns:1fr 1fr}
+    .ig-grid a:nth-child(n+4){display:block}
+    .ig-grid a:first-child{grid-column:span 2;aspect-ratio:2/1}
+  }
+
+  /* ---------- whatsapp flutuante ---------- */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.45);transition:transform .2s ease}
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:34px;height:34px;fill:#fff}
+  .wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ring 2.2s ease-out infinite}
+  @keyframes ring{to{transform:scale(1.6);opacity:0}}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsivo ---------- */
+  @media (max-width:1080px){
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .menu{gap:22px}
+  }
+  @media (max-width:920px){
+    .menu,.nav .btn{display:none}
+    .burger{display:grid;place-items:center}
+    .header.open{background:rgba(20,12,9,.98)}
+    .header.open .menu{display:flex;flex-direction:column;position:absolute;top:84px;left:0;right:0;background:rgba(20,12,9,.98);padding:12px 24px 28px;gap:4px;border-bottom:1px solid var(--line)}
+    .header.open .menu a{display:block;padding:14px 0;font-size:17px;border-bottom:1px solid var(--line)}
+    .hero{padding:120px 0 80px;text-align:center}
+    .hero-grid{grid-template-columns:1fr;gap:20px}
+    .hero-art{order:-1}
+    .hero-art .logo-big{width:min(300px,72vw)}
+    .hero-art .badge{width:100px;height:100px;right:8%;top:0}
+    .hero-art .badge strong{font-size:26px}
+    .hero-art .badge small{font-size:11px}
+    .hero-tags,.hero-actions{justify-content:center}
+    .hero-info{align-items:center}
+    .menu-grid,.about-grid,.loc-grid{grid-template-columns:1fr}
+    .menu-photo{max-width:340px;margin:0 auto;aspect-ratio:4/5}
+    .menu-sec::after{width:420px;height:420px;right:-200px;bottom:-200px}
+    .about-photos{max-width:600px;margin:0 auto;width:100%}
+    .about-photos .p2{right:0}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .quotes{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:600px){
+    .container{padding:0 16px}
+    .nav{height:72px}
+    .brand img{width:46px;height:46px}
+    .brand b{font-size:20px}
+    .header.open .menu{top:72px}
+    .services,.about{padding:100px 0 80px}
+    .menu-sec{padding:80px 0}
+    .cards{grid-template-columns:1fr}
+    .quotes{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(3,1fr);gap:10px}
+    .stat b{font-size:30px}
+    .stat{padding-left:10px}
+    .cta-box{padding:40px 24px;min-height:460px;align-items:flex-end}
+    .cta-box::before{background:linear-gradient(0deg, rgba(20,12,9,.96) 0%, rgba(20,12,9,.85) 55%, rgba(20,12,9,.2) 100%)}
+    .loc-card{padding:36px 24px}
+    .foot-grid{grid-template-columns:1fr}
+    .btn{font-size:18px;padding:13px 24px}
+    .hero-actions .btn{width:100%}
+    .strip-track span{font-size:19px;padding:12px 18px}
+  }
+
+  /* ---------- barra fixa de pedido (celular) ---------- */
+  .mobile-bar{display:none}
+
+  /* ---------- ajustes finos para celular ---------- */
+  @media (max-width:600px){
+    /* ritmo vertical mais curto */
+    .services,.about{padding:72px 0 64px}
+    .menu-sec{padding:64px 0}
+    .reviews,.insta,.cta,.faq,.location{padding-bottom:72px}
+    .section-head{margin-bottom:32px;gap:14px}
+    .h2{font-size:clamp(36px,10.5vw,48px);line-height:1}
+    .lead{font-size:15.5px}
+
+    /* hero: logo menor e botão de pedido visível na primeira tela */
+    .hero{padding:92px 0 56px;min-height:auto}
+    .hero-grid{gap:8px}
+    .hero-art .logo-big{width:min(210px,56vw);border-width:4px;box-shadow:0 20px 50px -10px rgba(0,0,0,.8),0 0 0 8px rgba(195,22,28,.35)}
+    .hero-art .badge{width:84px;height:84px;right:calc(50% - 150px);top:-4px}
+    .hero-art .badge strong{font-size:21px}
+    .hero-art .badge small{font-size:10px}
+    .hero h1{font-size:clamp(46px,14vw,60px);margin:16px 0 18px}
+    .hero h1 .outline{-webkit-text-stroke-width:1.5px}
+    .hero-tags{gap:8px;margin-bottom:22px}
+    .tag-white,.tag-red{font-size:16px;padding:7px 16px}
+    .hero-actions{gap:10px;margin-bottom:22px}
+    .hero-actions .btn-ghost{padding:11px 24px;font-size:16px}
+    .phone{font-size:28px}
+
+    /* serviços: cards compactos, ícone à esquerda */
+    .cards{gap:12px}
+    .card{display:grid;grid-template-columns:52px 1fr;column-gap:16px;padding:20px 18px;align-items:start}
+    .card .icon{width:52px;height:52px;margin:0;grid-row:span 3;box-shadow:0 0 0 5px rgba(195,22,28,.18)}
+    .card .icon svg{width:24px;height:24px}
+    .card h3{font-size:24px;margin-bottom:4px}
+    .card p{font-size:14.5px;line-height:1.5}
+    .card .pill{justify-self:start;margin-top:10px}
+    .card:hover{transform:none}
+
+    /* cardápio */
+    .menu-grid{gap:32px}
+    .menu-photo{aspect-ratio:4/3;max-width:none}
+    .menu-photo img{object-position:center 35%}
+    .checks li{font-size:16px}
+    .flavors{margin-bottom:26px}
+    .price-row .btn{width:100%}
+    .price-row{justify-content:center}
+
+    /* quem somos */
+    .about-grid{gap:40px}
+    .about-photos{padding-bottom:56px}
+
+    /* avaliações: carrossel deslizante */
+    .quotes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .quotes::-webkit-scrollbar{display:none}
+    .quote{flex:0 0 82%;scroll-snap-align:center}
+    .quotes .reveal{opacity:1;transform:none}
+    .swipe-hint{display:block}
+
+    /* instagram: 1 destaque + 4 */
+    .ig-grid{gap:8px}
+
+    /* cta */
+    .cta-box{min-height:400px}
+    .cta-content .merece{font-size:16px;margin-bottom:26px}
+    .cta-content .row .btn{width:100%}
+
+    /* faq */
+    .faq summary{padding:18px 18px;font-size:15.5px}
+    .faq .answer{padding:0 18px 20px;font-size:15px}
+
+    /* localização */
+    .loc-card{gap:20px}
+    .loc-card .btns .btn{width:100%}
+    .loc-card .btn{font-size:16px;padding:12px 10px}
+    .map,.map iframe{min-height:300px}
+
+    /* barra fixa de pedido */
+    .mobile-bar{display:grid;grid-template-columns:auto 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(13,8,6,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease}
+    .mobile-bar.show{transform:none}
+    .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:var(--pill);font-family:var(--display);text-transform:uppercase;letter-spacing:1px;font-size:17px}
+    .mobile-bar a svg{width:20px;height:20px;fill:currentColor}
+    .mobile-bar .call{padding:0 20px;border:2px solid rgba(255,255,255,.22);color:var(--white)}
+    .mobile-bar .order{background:linear-gradient(180deg,var(--yellow),var(--orange));color:var(--red-deep)}
+    .wa-float{display:none}
+    .footer{padding-bottom:96px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px 20px}
+    .foot-brand,.foot-grid > div:last-child{grid-column:1 / -1}
+  }
+  @media (max-width:600px){
+    /* endereço: ícone acompanha o texto quando quebra linha */
+    .hero-info .addr{display:block;text-align:center;font-size:14px;line-height:1.5}
+    .hero-info .addr svg{display:inline-block;vertical-align:-3px;margin-right:4px}
+    /* estatísticas: legendas mais compactas */
+    .stat span{display:block;font-size:12px;line-height:1.35}
+  }
+  @media (max-width:380px){
+    .tag-white,.tag-red{font-size:14px;padding:6px 12px}
+    .hero-tags{gap:6px}
+    .brand b{font-size:18px}
+    .phone{font-size:25px}
+  }
+  .swipe-hint{display:none;text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
+</style>
+<!-- Vercel Web Analytics (ative em: projeto > Analytics > Enable) -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<!-- ícones reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10.4 3.5 2.1-.8 1.3L11 13V7h2z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.8-.5zM12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.2 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.1c-.1-1.6-.4-3-1.6-4.2S17.7 1.3 16.1 1.2C14.4 1.1 9.6 1.1 7.9 1.2 6.3 1.3 4.9 1.6 3.7 2.8S2.1 5.5 2 7.1C1.9 8.8 1.9 13.6 2 15.3c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.7.1 6.5.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.2-1.7.2-6.5.1-8.2zm-2.2 10.4a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.8.4s-4.5.1-5.8-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.8s-.1-4.5.4-5.8a3.3 3.3 0 0 1 1.9-1.9c1.3-.5 4.4-.4 5.8-.4s4.5-.1 5.8.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.8s.1 4.5-.4 5.8z"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 4h16l1 5a3 3 0 0 1-2 2.8V20H5v-8.2A3 3 0 0 1 3 9zm3 9v5h4v-5zm6 0v5h4v-5z"/></symbol>
+  <symbol id="i-moto" viewBox="0 0 24 24"><path d="M19 7c0-1.1-.9-2-2-2h-3v2h3v2.6L13.5 14H10V9H6a4 4 0 0 0-4 4v3h2a3 3 0 0 0 6 0h4.5L19 10.4zM7 17a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM5 6h5v2H5zm14 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></symbol>
+  <symbol id="i-beer" viewBox="0 0 24 24"><path d="M4 4h12v2h2a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3h-2v3H4zm12 4v7h2a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1zM7 8v9h2V8zm4 0v9h2V8z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <nav class="container nav" aria-label="Principal">
+    <a href="#inicio" class="brand" aria-label="Filé Miau Espetinhos, início">
+      <img src="assets/logo-icon.png" alt="" width="56" height="56">
+      <div><b>Filé Miau</b><small>Espetinhos</small></div>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#quem-somos">Quem somos</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-ig" href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Instagram @file.miauespetinhos"><svg><use href="#i-ig"/></svg></a>
+      <a class="btn btn-primary" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener">
+        <svg><use href="#i-wa"/></svg> Peça agora
+      </a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="embers" id="embers" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">📍 Matelândia - PR</span>
+      <h1 class="display">Espetinho<br><span class="outline">saboroso</span> e<br><span class="red">suculento</span></h1>
+      <div class="hero-tags">
+        <span class="tag-white">Peça agora o seu!</span>
+        <span class="tag-red">A partir de <b>R$ 11,90</b></span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Pedir no WhatsApp</a>
+        <a class="btn btn-ghost" href="#cardapio">Ver cardápio</a>
+      </div>
+      <div class="hero-info">
+        <a class="phone" href="tel:+5545999378533"><span class="ico"><svg><use href="#i-phone"/></svg></span>45 99937-8533</a>
+        <span class="addr"><svg><use href="#i-pin"/></svg>Avenida Paraná, 1190 · Centro · Matelândia</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="halo"></div>
+      <img class="logo-big" src="assets/logo.jpg" alt="Logo Filé Miau: gato churrasqueiro de avental mordendo um espetinho, com chamas ao fundo" width="520" height="520">
+      <div class="badge"><div><small>Terça a</small><strong>Domingo</strong><small>18h às 23h</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Hoje tem o melhor espetinho</span><span>Quinta é dia de Happy Hour</span><span>Se preferir, peça no delivery</span><span>Aqui tem sabor e qualidade</span>
+    <span>Hoje tem o melhor espetinho</span><span>Quinta é dia de Happy Hour</span><span>Se preferir, peça no delivery</span><span>Aqui tem sabor e qualidade</span>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nossos serviços</span>
+      <h2 class="display h2">Do jeito que <span class="orange">você preferir</span></h2>
+      <p class="lead">No salão com a turma ou no conforto de casa: o espetinho chega quentinho do mesmo jeito.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="icon"><svg><use href="#i-store"/></svg></div>
+        <h3>Local</h3>
+        <p>Ambiente agradável no Centro de Matelândia pra comer na hora, direto da brasa.</p>
+        <span class="pill">Ter a Dom</span>
+      </article>
+      <article class="card reveal">
+        <div class="icon"><svg><use href="#i-moto"/></svg></div>
+        <h3>Delivery</h3>
+        <p>Bateu a fome? Chama no WhatsApp e a gente leva o seu pedido até você.</p>
+        <span class="pill">Peça pelo Whats</span>
+      </article>
+      <article class="card reveal">
+        <div class="icon"><svg><use href="#i-beer"/></svg></div>
+        <h3>Happy Hour</h3>
+        <p>Quinta é dia de happy hour. Junta a galera e vem curtir com a gente.</p>
+        <span class="pill">Toda quinta</span>
+      </article>
+      <article class="card reveal">
+        <div class="icon"><svg><use href="#i-mic"/></svg></div>
+        <h3>Música ao vivo</h3>
+        <p>Noites especiais com acústico ao vivo. Fica de olho no Instagram pra saber a próxima data.</p>
+        <span class="pill">Agenda no Insta</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CARDÁPIO -->
+<section class="menu-sec" id="cardapio">
+  <div class="container menu-grid">
+    <div class="menu-photo reveal"><img src="assets/espetinho-destaque.jpg" alt="Espetinho de carne com pimentão e cebola sobre a brasa, com chamas e faíscas" loading="lazy"></div>
+    <div class="menu-copy reveal">
+      <span class="eyebrow light">Cardápio</span>
+      <h2 class="display h2">Toda terça a domingo,<br><span class="yellow">o mais saboroso</span></h2>
+      <ul class="checks">
+        <li>Carne macia e suculenta</li>
+        <li>Tempero secreto que você ama</li>
+        <li>Acompanha farofa caseira e molho especial</li>
+      </ul>
+      <div class="flavors" aria-label="Opções de espetinho">
+        <span>Carne</span><span>Frango</span><span>Coração</span><span>Linguiça</span><span>e muito mais</span>
+      </div>
+      <div class="price-row">
+        <a class="btn btn-white" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Pode%20me%20mandar%20o%20card%C3%A1pio%3F" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Pedir o cardápio</a>
+        <span class="tag-red">A partir de <b>R$ 11,90</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM SOMOS -->
+<section class="about" id="quem-somos">
+  <div class="container about-grid">
+    <div class="about-photos reveal">
+      <div class="p1"><img src="assets/tabua-espetos.jpg" alt="Tábua com espetinhos variados, vinagrete e farofa" loading="lazy"></div>
+      <div class="p2"><img src="assets/espetos-prato.jpg" alt="Espetinhos de frango e coração servidos em travessa branca" loading="lazy"></div>
+      <span class="eyebrow sticker">Aqui tem sabor e qualidade!</span>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">Quem somos</span>
+      <h2 class="display h2">Brasa, tempero e <span class="red">a turma</span> reunida</h2>
+      <p>O <strong>Filé Miau Espetinhos</strong> nasceu em Matelândia com uma ideia simples: servir espetinho de verdade, assado na hora, com carne macia e aquele tempero que faz voltar.</p>
+      <p>Aqui cada espeto é preparado com cuidado e chega à mesa acompanhado de <strong>farofa caseira e molho especial</strong>. É lugar pra chamar os amigos, a família e aproveitar a noite sem pressa.</p>
+      <div class="stats">
+        <div class="stat"><b>5,0★</b><span>no Google</span></div>
+        <div class="stat"><b>6</b><span>dias por semana</span></div>
+        <div class="stat"><b>700+</b><span>seguidores no Insta</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section class="reviews" aria-labelledby="rev-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Avaliações</span>
+      <h2 id="rev-title" class="display h2">Quem provou <span class="yellow">aprovou</span></h2>
+      <div class="stars" aria-label="Nota máxima: 5 de 5 estrelas">★★★★★</div>
+      <p class="lead">Nota máxima no Google, de acordo com as avaliações dos nossos clientes.</p>
+    </div>
+    <div class="quotes">
+      <article class="quote reveal">
+        <header><span class="avatar">S</span><div><b>Suellen Florencio</b><small>Google</small></div></header>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p>“Comida saborosa e bom atendimento 🙂”</p>
+      </article>
+      <article class="quote reveal">
+        <header><span class="avatar">C</span><div><b>Cristiane Meire</b><small>Google</small></div></header>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p>“Lugar agradável, espetinho maravilhoso.”</p>
+      </article>
+      <article class="quote reveal">
+        <header><span class="avatar">D</span><div><b>Daniel Silva</b><small>Local Guide · Google</small></div></header>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="meta">Refeição no local · R$ 20–40</p>
+      </article>
+      <article class="quote reveal">
+        <header><span class="avatar">N</span><div><b>Nandan Giri</b><small>Local Guide · Google</small></div></header>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="meta">Jantar · R$ 1–20</p>
+      </article>
+      <article class="quote reveal">
+        <header><span class="avatar">G</span><div><b>Gabriel</b><small>Google</small></div></header>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="meta">Avaliação 5 estrelas</p>
+      </article>
+      <a class="quote quote-cta reveal" href="https://www.google.com/maps/search/?api=1&query=Fil%C3%A9+Miau+Espetinhos+Matel%C3%A2ndia" target="_blank" rel="noopener">
+        <b>Já provou?</b>
+        <span>Ver todas as avaliações e deixar a sua no Google →</span>
+      </a>
+    </div>
+    <p class="swipe-hint" aria-hidden="true">Deslize para ver mais avaliações →</p>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="insta" id="instagram" aria-labelledby="ig-title">
+  <div class="container">
+    <div class="insta-head reveal">
+      <div>
+        <span class="eyebrow">Instagram</span>
+        <h2 id="ig-title" class="display h2">Segue a gente no <span class="orange">Insta</span></h2>
+        <p class="lead">Promoções, happy hour, música ao vivo e as novidades da brasa. Tudo sai primeiro por lá.</p>
+      </div>
+      <a class="ig-profile" href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener">
+        <span class="ig-ring"><img src="assets/logo-icon.png" alt="" width="64" height="64"></span>
+        <span><b>@file.miauespetinhos</b><small>Filé Miau Espetinhos</small></span>
+        <span class="ig-follow"><svg><use href="#i-ig"/></svg> Seguir</span>
+      </a>
+    </div>
+    <div class="ig-grid reveal">
+      <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/espetinho-destaque.jpg" alt="Espetinho na brasa" loading="lazy"></a>
+      <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/tabua-espetos.jpg" alt="Tábua de espetinhos com vinagrete e farofa" loading="lazy"></a>
+      <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/espeto-carne.jpg" alt="Espetinho de carne suculento" loading="lazy"></a>
+      <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/espetos-prato.jpg" alt="Espetinhos de frango e coração" loading="lazy"></a>
+      <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/logo.jpg" alt="Logo Filé Miau" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <img src="assets/tabua-espetos.jpg" alt="" loading="lazy">
+      <div class="cta-content">
+        <div class="bora">Bora?</div>
+        <div class="turma">Chama a turma</div>
+        <span class="merece">Vocês merecem esse momento!</span>
+        <div class="row">
+          <a class="btn btn-primary" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Fazer pedido</a>
+          <a class="phone" href="tel:+5545999378533" style="font-size:28px"><span class="ico"><svg><use href="#i-phone"/></svg></span>45 99937-8533</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DÚVIDAS -->
+<section class="faq" id="duvidas">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Dúvidas</span>
+      <h2 class="display h2">Perguntas <span class="yellow">frequentes</span></h2>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>Qual o horário de funcionamento?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">Abrimos de <strong>terça a domingo, das 18h às 23h</strong>. Às segundas a brasa descansa.</div>
+      </details>
+      <details>
+        <summary>Vocês fazem delivery?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">Sim! É só chamar no <a href="https://wa.me/5545999378533" target="_blank" rel="noopener">WhatsApp (45) 99937-8533</a> e fazer seu pedido. A gente informa a taxa e o tempo de entrega pra sua região na hora.</div>
+      </details>
+      <details>
+        <summary>Quanto custa o espetinho?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">Os espetinhos começam em <strong>R$ 11,90</strong>. Peça o cardápio completo no WhatsApp para ver todas as opções e valores.</div>
+      </details>
+      <details>
+        <summary>O espetinho vem com acompanhamento?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">Vem sim: <strong>farofa caseira e molho especial</strong> acompanham o seu espetinho.</div>
+      </details>
+      <details>
+        <summary>Tem happy hour ou promoção?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">Quinta é dia de <strong>Happy Hour</strong>! Promoções e noites com música ao vivo são divulgadas no nosso <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener">Instagram @file.miauespetinhos</a>.</div>
+      </details>
+      <details>
+        <summary>Posso reservar mesa para um grupo?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">Pode! Vai vir com a turma? Manda uma mensagem no WhatsApp com o dia, horário e número de pessoas que a gente organiza tudo.</div>
+      </details>
+      <details>
+        <summary>Quais formas de pagamento vocês aceitam?<span class="plus" aria-hidden="true"></span></summary>
+        <div class="answer">Confirme as formas de pagamento disponíveis direto no <a href="https://wa.me/5545999378533" target="_blank" rel="noopener">WhatsApp</a> na hora do pedido.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="location" id="localizacao">
+  <div class="container loc-grid">
+    <div class="loc-card reveal">
+      <span class="eyebrow light" style="align-self:flex-start">Localização</span>
+      <h2 class="display h2">Vem pro <span style="color:var(--yellow)">Filé Miau!</span></h2>
+      <div class="loc-item"><span class="i"><svg><use href="#i-pin"/></svg></span><div><b>Endereço</b><span>Av. Paraná, 1190 - Sala 1, Centro<br>Matelândia - PR, 85887-000</span></div></div>
+      <div class="loc-item"><span class="i"><svg><use href="#i-calendar"/></svg></span><div><b>Dias</b><span>Terça a domingo</span></div></div>
+      <div class="loc-item"><span class="i"><svg><use href="#i-clock"/></svg></span><div><b>Horário</b><span>18h às 23h</span></div></div>
+      <div class="loc-item"><span class="i"><svg><use href="#i-phone"/></svg></span><div><b>Telefone / WhatsApp</b><span><a href="tel:+5545999378533">(45) 99937-8533</a></span></div></div>
+      <div class="loc-item"><span class="i"><svg><use href="#i-ig"/></svg></span><div><b>Instagram</b><span><a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener">@file.miauespetinhos</a></span></div></div>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://wa.me/5545999378533" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Chamar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe title="Mapa: Filé Miau Espetinhos, Av. Paraná, 1190, Matelândia - PR" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Fil%C3%A9+Miau+Espetinhos,+Av.+Paran%C3%A1,+1190,+Matel%C3%A2ndia+-+PR&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#inicio" class="brand"><img src="assets/logo-icon.png" alt="" width="56" height="56"><div><b>Filé Miau</b><small>Espetinhos</small></div></a>
+        <p>Espetinho saboroso e suculento, assado na brasa, no coração de Matelândia.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="https://wa.me/5545999378533" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#cardapio">Cardápio</a></li>
+          <li><a href="#quem-somos">Quem somos</a></li>
+          <li><a href="#duvidas">Dúvidas</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <ul>
+          <li>Terça a domingo</li>
+          <li>18h às 23h</li>
+          <li>Segunda: fechado</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+5545999378533">(45) 99937-8533</a></li>
+          <li>Av. Paraná, 1190 - Sl 1</li>
+          <li>Centro, Matelândia - PR</li>
+          <li><a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener">@file.miauespetinhos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="year">2026</span> Filé Miau Espetinhos. Todos os direitos reservados.</span>
+      <span>Matelândia - PR</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="mobile-bar" id="mobileBar" aria-label="Pedido rápido">
+  <a class="call" href="tel:+5545999378533"><svg><use href="#i-phone"/></svg> Ligar</a>
+  <a class="order" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Pedir no WhatsApp</a>
+</nav>
+<a class="wa-float" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+  // header com fundo ao rolar
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+  // menu mobile
+  const burger = document.getElementById('burger');
+  burger.addEventListener('click', () => {
+    const open = header.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => {
+    header.classList.remove('open'); burger.setAttribute('aria-expanded', false);
+  }));
+
+  // brasas subindo no hero
+  const embers = document.getElementById('embers');
+  for (let i = 0; i < 28; i++) {
+    const s = document.createElement('span');
+    s.style.left = Math.random() * 100 + '%';
+    s.style.animationDuration = 6 + Math.random() * 8 + 's';
+    s.style.animationDelay = -Math.random() * 12 + 's';
+    s.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
+    const size = 2 + Math.random() * 3;
+    s.style.width = s.style.height = size + 'px';
+    embers.appendChild(s);
+  }
+
+  // reveal ao rolar
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // barra de pedido no celular aparece depois do hero
+  const bar = document.getElementById('mobileBar');
+  const hero = document.getElementById('inicio');
+  new IntersectionObserver(([e]) => bar.classList.toggle('show', !e.isIntersecting), { threshold: .15 }).observe(hero);
+
+  // destaca no menu a seção visível
+  const links = [...document.querySelectorAll('#menu a')];
+  const spy = new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  links.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
