@@ -145,7 +145,7 @@
   .menu-sec::before{content:"ESPETINHO";position:absolute;top:30px;left:-20px;font-family:var(--display);font-size:clamp(120px,20vw,280px);line-height:1;color:rgba(0,0,0,.12);white-space:nowrap;pointer-events:none}
   .menu-sec::after{content:"";position:absolute;right:-180px;bottom:-220px;width:620px;height:620px;border-radius:50%;background:linear-gradient(160deg,var(--yellow),var(--orange));opacity:.95}
   .menu-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center;position:relative;z-index:2}
-  .menu-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:3/5;max-height:620px;box-shadow:0 30px 60px -10px rgba(0,0,0,.6);border:4px solid rgba(255,255,255,.12)}
+  .menu-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:439/573;max-width:460px;width:100%;justify-self:center;box-shadow:0 30px 60px -10px rgba(0,0,0,.6);border:4px solid rgba(255,255,255,.12)}
   .menu-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
   .menu-photo:hover img{transform:scale(1.05)}
   .menu-copy .h2{color:var(--white);margin:18px 0 22px}
@@ -315,7 +315,7 @@
     .hero-tags,.hero-actions{justify-content:center}
     .hero-info{align-items:center}
     .menu-grid,.about-grid,.loc-grid{grid-template-columns:1fr}
-    .menu-photo{max-width:340px;margin:0 auto;aspect-ratio:4/5}
+    .menu-photo{max-width:420px;margin:0 auto}
     .menu-sec::after{width:420px;height:420px;right:-200px;bottom:-200px}
     .about-photos{max-width:600px;margin:0 auto;width:100%}
     .about-photos .p2{right:0}
@@ -384,8 +384,8 @@
 
     /* cardápio */
     .menu-grid{gap:32px}
-    .menu-photo{aspect-ratio:4/3;max-width:none}
-    .menu-photo img{object-position:center 35%}
+    .menu-photo{aspect-ratio:4/5;max-width:none}
+    .menu-photo img{object-position:center 45%}
     .checks li{font-size:16px}
     .flavors{margin-bottom:26px}
     .price-row .btn{width:100%}
@@ -573,7 +573,7 @@
 <!-- CARDÁPIO -->
 <section class="menu-sec" id="cardapio">
   <div class="container menu-grid">
-    <div class="menu-photo reveal"><img src="assets/espetinho-destaque.jpg" alt="Espetinho de carne com pimentão e cebola sobre a brasa, com chamas e faíscas" loading="lazy"></div>
+    <div class="menu-photo reveal"><img src="assets/espetinho-tabua.jpg" alt="Espetinhos temperados na tábua de madeira com limão, alho e pimenta" width="878" height="1146" loading="lazy"></div>
     <div class="menu-copy reveal">
       <span class="eyebrow light">Cardápio</span>
       <h2 class="display h2">Toda terça a domingo,<br><span class="yellow">o mais saboroso</span></h2>
