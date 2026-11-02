@@ -98,6 +98,7 @@
       radial-gradient(ellipse 80% 60% at 70% 110%, rgba(195,22,28,.45), transparent 70%),
       repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 2px, transparent 2px 140px),
       linear-gradient(180deg,#1a0f0b 0%, #120a07 100%)}
+  .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:160px;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
   .hero-grid > *{min-width:0}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;z-index:2}
   .hero h1{font-size:clamp(56px,8.4vw,112px);color:var(--white);margin:22px 0 26px}
@@ -120,25 +121,20 @@
   .hero-art .badge small{display:block;font-size:14px;letter-spacing:1px}
   .hero-art .badge strong{display:block;font-weight:400;font-size:34px;color:var(--yellow)}
 
-  /* ---------- faixa ---------- */
-  .strip{background:var(--yellow);color:var(--red-deep);overflow:hidden;margin:0;position:relative;z-index:5;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-  .strip-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
-  .strip-track span{font-family:var(--display);text-transform:uppercase;font-size:24px;letter-spacing:1px;padding:14px 26px;white-space:nowrap;display:flex;align-items:center;gap:26px}
-  .strip-track span::after{content:"✦";color:var(--red)}
-  @keyframes marquee{to{transform:translateX(-50%)}}
-
   /* ---------- serviços ---------- */
-  .services{padding:130px 0 110px}
+  .services{padding:64px 0 110px;scroll-margin-top:48px;background:radial-gradient(ellipse 70% 55% at 50% 72%, rgba(195,22,28,.16), transparent 70%)}
   .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .card{background:linear-gradient(180deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+  .card{display:flex;flex-direction:column;background:linear-gradient(180deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:var(--radius);padding:34px 26px 28px;position:relative;overflow:hidden;box-shadow:0 18px 40px -22px rgba(0,0,0,.9);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+  .card::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow))}
   .card::before{content:"";position:absolute;inset:auto -40% -60% -40%;height:70%;background:radial-gradient(ellipse at center, rgba(242,138,15,.22), transparent 70%);opacity:0;transition:opacity .3s ease}
-  .card:hover{transform:translateY(-6px);border-color:rgba(242,138,15,.5)}
+  .card:hover{transform:translateY(-6px);border-color:rgba(242,138,15,.5);box-shadow:0 26px 50px -22px rgba(242,138,15,.45)}
   .card:hover::before{opacity:1}
-  .card .icon{width:58px;height:58px;border-radius:50%;background:var(--red);display:grid;place-items:center;margin-bottom:22px;box-shadow:0 0 0 6px rgba(195,22,28,.18)}
+  .card .icon{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--orange),var(--red));display:grid;place-items:center;margin-bottom:22px;transform:rotate(-6deg);box-shadow:0 10px 22px -8px rgba(195,22,28,.8);transition:transform .25s ease}
+  .card:hover .icon{transform:rotate(0) scale(1.06)}
   .card .icon svg{width:28px;height:28px;fill:var(--white)}
-  .card h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:28px;color:var(--white);letter-spacing:.5px;line-height:1.05;margin-bottom:10px}
-  .card p{color:var(--muted);font-size:15px;position:relative}
-  .card .pill{display:inline-block;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--yellow);border:1px solid rgba(255,210,26,.35);padding:4px 12px;border-radius:var(--pill)}
+  .card h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:30px;color:var(--white);letter-spacing:.5px;line-height:1.05;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px;position:relative;margin-bottom:20px}
+  .card .pill{display:inline-block;align-self:flex-start;margin-top:auto;position:relative;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--yellow);background:rgba(255,210,26,.1);border:1px solid rgba(255,210,26,.35);padding:5px 13px;border-radius:var(--pill)}
 
   /* ---------- cardápio (bloco vinho estilo post) ---------- */
   .menu-sec{background:linear-gradient(135deg,var(--red-deep) 0%, #5a0b0c 100%);overflow:hidden;padding:110px 0}
@@ -341,7 +337,6 @@
     .foot-grid{grid-template-columns:1fr}
     .btn{font-size:18px;padding:13px 24px}
     .hero-actions .btn{width:100%}
-    .strip-track span{font-size:19px;padding:12px 18px}
   }
 
   /* ---------- barra fixa de pedido (celular) ---------- */
@@ -350,7 +345,8 @@
   /* ---------- ajustes finos para celular ---------- */
   @media (max-width:600px){
     /* ritmo vertical mais curto */
-    .services,.about{padding:72px 0 64px}
+    .services{padding:44px 0 64px;scroll-margin-top:44px}
+    .about{padding:72px 0 64px}
     .menu-sec{padding:64px 0}
     .reviews,.insta,.cta,.faq,.location{padding-bottom:72px}
     .section-head{margin-bottom:32px;gap:14px}
@@ -375,10 +371,10 @@
     /* serviços: cards compactos, ícone à esquerda */
     .cards{gap:12px}
     .card{display:grid;grid-template-columns:52px 1fr;column-gap:16px;padding:20px 18px;align-items:start}
-    .card .icon{width:52px;height:52px;margin:0;grid-row:span 3;box-shadow:0 0 0 5px rgba(195,22,28,.18)}
+    .card .icon{width:52px;height:52px;border-radius:14px;margin:0;grid-row:span 3}
     .card .icon svg{width:24px;height:24px}
     .card h3{font-size:24px;margin-bottom:4px}
-    .card p{font-size:14.5px;line-height:1.5}
+    .card p{font-size:14.5px;line-height:1.5;margin-bottom:0}
     .card .pill{justify-self:start;margin-top:10px}
     .card:hover{transform:none}
 
@@ -524,14 +520,6 @@
     </div>
   </div>
 </section>
-
-<!-- FAIXA -->
-<div class="strip" aria-hidden="true">
-  <div class="strip-track">
-    <span>Hoje tem o melhor espetinho</span><span>Quinta é dia de Happy Hour</span><span>Se preferir, peça no delivery</span><span>Aqui tem sabor e qualidade</span>
-    <span>Hoje tem o melhor espetinho</span><span>Quinta é dia de Happy Hour</span><span>Se preferir, peça no delivery</span><span>Aqui tem sabor e qualidade</span>
-  </div>
-</div>
 
 <!-- SERVIÇOS -->
 <section class="services" id="servicos">
