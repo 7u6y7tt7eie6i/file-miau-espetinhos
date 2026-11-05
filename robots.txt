@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://file-miau-espetinhos.vercel.app/sitemap.xml
