@@ -69,6 +69,12 @@
   .phone .ico{width:1.15em;height:1.15em;border-radius:50%;background:var(--white);display:grid;place-items:center;flex:none}
   .phone .ico svg{width:58%;height:58%;fill:var(--orange)}
   .phone:hover{color:var(--yellow)}
+  .phone.wa{font-size:clamp(24px,2.8vw,34px);gap:14px;transition:color .2s ease}
+  .phone.wa:hover{color:#25d366}
+  .phone.wa .ico{width:1.65em;height:1.65em;background:#25d366;box-shadow:0 0 0 5px rgba(37,211,102,.18),0 8px 20px -6px rgba(37,211,102,.7)}
+  .phone.wa .ico svg{width:60%;height:60%;fill:#fff}
+  .phone .num{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+  .phone .num small{font-size:11.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#25d366;margin-bottom:5px}
 
   /* ---------- brasas ---------- */
   .embers{position:absolute;inset:0;pointer-events:none;overflow:hidden}
@@ -123,38 +129,29 @@
   .hero-art .badge small{display:block;font-size:14px;letter-spacing:1px}
   .hero-art .badge strong{display:block;font-weight:400;font-size:34px;color:var(--yellow)}
 
-  /* ---------- serviços ---------- */
-  .services{padding:64px 0 110px;scroll-margin-top:48px;background:radial-gradient(ellipse 70% 55% at 50% 72%, rgba(195,22,28,.16), transparent 70%)}
-  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:card}
-  .card{counter-increment:card;display:flex;flex-direction:column;background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px 24px;position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease}
-  .card::after{content:counter(card,decimal-leading-zero);position:absolute;top:14px;right:20px;font-family:var(--display);font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.13);transition:-webkit-text-stroke-color .25s ease;pointer-events:none}
-  .card::before{content:"";position:absolute;inset:auto -30% -70% -30%;height:80%;background:radial-gradient(ellipse at center, rgba(242,138,15,.16), transparent 70%);opacity:0;transition:opacity .3s ease;pointer-events:none}
-  .card:hover{transform:translateY(-4px);border-color:rgba(242,138,15,.4);background:rgba(255,255,255,.04)}
-  .card:hover::before{opacity:1}
-  .card:hover::after{-webkit-text-stroke-color:rgba(242,138,15,.55)}
-  .card .icon{width:54px;height:54px;border-radius:50%;border:1.5px solid rgba(242,138,15,.45);background:rgba(242,138,15,.08);display:grid;place-items:center;margin-bottom:24px;transition:background .25s ease,border-color .25s ease}
-  .card:hover .icon{background:rgba(242,138,15,.16);border-color:var(--orange)}
-  .card .icon svg{width:26px;height:26px;fill:none;stroke:var(--orange);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-  .card h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:28px;color:var(--white);letter-spacing:.5px;line-height:1.05;margin-bottom:10px}
-  .card p{color:var(--muted);font-size:15px;position:relative;margin-bottom:22px}
-  .card .pill{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);position:relative;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--yellow)}
-  .card .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange);box-shadow:0 0 8px var(--orange);flex:none}
 
   /* ---------- cardápio (bloco vinho estilo post) ---------- */
   .menu-sec{background:linear-gradient(135deg,var(--red-deep) 0%, #5a0b0c 100%);overflow:hidden;padding:110px 0}
   .menu-sec::before{content:"ESPETINHO";position:absolute;top:30px;left:-20px;font-family:var(--display);font-size:clamp(120px,20vw,280px);line-height:1;color:rgba(0,0,0,.12);white-space:nowrap;pointer-events:none}
-  .menu-sec::after{content:"";position:absolute;right:-180px;bottom:-220px;width:620px;height:620px;border-radius:50%;background:linear-gradient(160deg,var(--yellow),var(--orange));opacity:.95}
+  .menu-sec::after{content:"";position:absolute;right:-300px;bottom:-340px;width:820px;height:820px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,210,26,.55) 0%,rgba(242,138,15,.38) 18%,rgba(195,22,28,.18) 40%,transparent 66%),repeating-radial-gradient(circle,rgba(255,210,26,.16) 0 2px,transparent 2px 44px);-webkit-mask:radial-gradient(circle,#000 25%,transparent 70%);mask:radial-gradient(circle,#000 25%,transparent 70%);animation:glow 7s ease-in-out infinite}
+  @keyframes glow{50%{transform:scale(1.05);opacity:.8}}
   .menu-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center;position:relative;z-index:2}
   .menu-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:439/573;max-width:460px;width:100%;justify-self:center;box-shadow:0 30px 60px -10px rgba(0,0,0,.6);border:4px solid rgba(255,255,255,.12)}
   .menu-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
   .menu-photo:hover img{transform:scale(1.05)}
-  .menu-copy .h2{color:var(--white);margin:18px 0 22px}
+  .menu-copy .h2{color:var(--white);margin:18px 0 22px;line-height:1.28}
   .menu-copy .h2 .yellow{color:var(--yellow)}
   .checks{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0 0 30px}
   .checks li{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;color:var(--white)}
   .checks li::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--yellow);flex:none;box-shadow:0 0 0 4px rgba(255,210,26,.2)}
-  .flavors{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
-  .flavors span{background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15);color:var(--white);padding:8px 18px;border-radius:var(--pill);font-weight:600;font-size:14px}
+  .flavors{display:grid;gap:16px;margin-bottom:36px}
+  .flv-row{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:14px}
+  .flv-label{font-family:var(--display);text-transform:uppercase;letter-spacing:2px;font-size:13px;color:var(--yellow);line-height:1.1}
+  .flv-row ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 8px}
+  .flv-row li{font-family:var(--display);text-transform:uppercase;letter-spacing:.8px;font-size:17px;line-height:1;padding:8px 14px 7px;border-radius:4px;transition:transform .2s ease}
+  .flv-row li:hover{transform:translateY(-2px)}
+  .flv-classic li{background:var(--white);color:var(--red-deep);box-shadow:3px 3px 0 rgba(0,0,0,.35)}
+  .flv-special li{background:rgba(0,0,0,.22);color:var(--yellow);border:1.5px dashed rgba(255,210,26,.65)}
   .price-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px}
 
   /* ---------- quem somos ---------- */
@@ -173,29 +170,18 @@
   .stat b{display:block;font-family:var(--display);font-weight:400;font-size:40px;line-height:1;color:var(--yellow)}
   .stat span{font-size:13px;color:var(--muted)}
 
-  /* ---------- avaliações ---------- */
-  .reviews{padding:20px 0 120px}
-  .stars{color:var(--yellow);font-size:26px;letter-spacing:4px;margin:6px 0 8px}
-  .reviews .section-head{gap:14px}
-  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .quote header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-  .quote header b{display:block;color:var(--white);font-size:15px;line-height:1.2}
-  .quote header small{color:var(--muted);font-size:12.5px}
-  .avatar{width:42px;height:42px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font-weight:700;flex:none}
-  .quote .stars{font-size:16px;letter-spacing:2px;margin:0 0 10px}
-  .quote p{color:var(--text);font-size:16px;font-weight:500}
-  .quote p.meta{color:var(--muted);font-size:14px;font-weight:500}
-  .quote.quote-cta{display:flex;flex-direction:column;justify-content:center;gap:8px;background:linear-gradient(160deg,var(--red-deep),#4a090a);transition:transform .25s ease}
-  .quote-cta:hover{transform:translateY(-4px)}
-  .quote-cta b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:30px;color:var(--yellow);line-height:1}
-  .quote-cta span{color:var(--white);font-weight:600;font-size:15px}
-  .quote{background:var(--bg-3);border-radius:var(--radius);padding:26px;border:1px solid var(--line)}
-
   /* ---------- CTA "BORA?" ---------- */
-  .cta{padding:0 0 120px}
+  .cta{padding:96px 0;margin-bottom:110px;overflow:hidden;background:radial-gradient(ellipse 60% 80% at 85% 100%, rgba(242,138,15,.22), transparent 70%),linear-gradient(135deg,var(--red-deep) 0%, #5a0b0c 100%)}
+  .cta::before{content:"BORA?";position:absolute;left:-30px;bottom:-60px;font-family:var(--display);font-size:clamp(160px,26vw,360px);line-height:1;color:rgba(0,0,0,.14);white-space:nowrap;pointer-events:none}
+  .cta .container{position:relative}
+  .cta-box{box-shadow:0 30px 70px -20px rgba(0,0,0,.75)}
+  .cta-box::after{content:"";position:absolute;inset:12px;border:1px dashed rgba(255,210,26,.32);border-radius:20px;z-index:2;pointer-events:none}
+  .cta-stamp{position:absolute;right:56px;top:46px;z-index:3;width:150px;height:150px;border-radius:50%;background:linear-gradient(160deg,var(--yellow),var(--orange));color:var(--red-deep);display:grid;place-items:center;text-align:center;font-family:var(--display);text-transform:uppercase;line-height:1;transform:rotate(10deg);border:3px dashed rgba(126,16,18,.45);box-shadow:0 0 0 6px rgba(255,210,26,.25),0 16px 34px rgba(0,0,0,.5)}
+  .cta-stamp small{display:block;font-size:15px;letter-spacing:1px}
+  .cta-stamp strong{display:block;font-weight:400;font-size:40px;margin-top:4px}
   .cta-box{position:relative;border-radius:28px;overflow:hidden;min-height:420px;display:flex;align-items:center;padding:64px}
   .cta-box > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .cta-box::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(20,12,9,.95) 0%, rgba(20,12,9,.8) 45%, rgba(20,12,9,.15) 100%);z-index:1}
+  .cta-box::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(52,7,8,.96) 0%, rgba(70,9,10,.82) 45%, rgba(70,9,10,.1) 100%);z-index:1}
   .cta-content{position:relative;z-index:2;max-width:560px}
   .cta-content .bora{font-family:var(--display);text-transform:uppercase;font-size:clamp(44px,6vw,72px);line-height:1;color:var(--white);margin-bottom:4px}
   .cta-content .turma{font-family:var(--display);text-transform:uppercase;font-size:clamp(40px,5.4vw,64px);line-height:1;color:var(--orange);margin-bottom:12px}
@@ -296,7 +282,6 @@
 
   /* ---------- responsivo ---------- */
   @media (max-width:1080px){
-    .cards{grid-template-columns:repeat(2,1fr)}
     .menu{gap:22px}
   }
   @media (max-width:920px){
@@ -316,11 +301,10 @@
     .hero-info{align-items:center}
     .menu-grid,.about-grid,.loc-grid{grid-template-columns:1fr}
     .menu-photo{max-width:420px;margin:0 auto}
-    .menu-sec::after{width:420px;height:420px;right:-200px;bottom:-200px}
+    .menu-sec::after{width:560px;height:560px;right:-260px;bottom:-260px}
     .about-photos{max-width:600px;margin:0 auto;width:100%}
     .about-photos .p2{right:0}
     .foot-grid{grid-template-columns:1fr 1fr}
-    .quotes{grid-template-columns:1fr 1fr}
   }
   @media (max-width:600px){
     .container{padding:0 16px}
@@ -328,15 +312,17 @@
     .brand img{width:46px;height:46px}
     .brand b{font-size:20px}
     .header.open .menu{top:72px}
-    .services,.about{padding:100px 0 80px}
+    .about{padding:100px 0 80px}
     .menu-sec{padding:80px 0}
-    .cards{grid-template-columns:1fr}
-    .quotes{grid-template-columns:1fr}
     .stats{grid-template-columns:repeat(2,1fr);gap:10px}
     .stat b{font-size:30px}
     .stat{padding-left:10px}
     .cta-box{padding:40px 24px;min-height:460px;align-items:flex-end}
-    .cta-box::before{background:linear-gradient(0deg, rgba(20,12,9,.96) 0%, rgba(20,12,9,.85) 55%, rgba(20,12,9,.2) 100%)}
+    .cta-box::before{background:linear-gradient(0deg, rgba(52,7,8,.97) 0%, rgba(70,9,10,.86) 55%, rgba(70,9,10,.15) 100%)}
+    .cta-stamp{width:104px;height:104px;right:22px;top:22px}
+    .cta-stamp small{font-size:11px}
+    .cta-stamp strong{font-size:27px}
+    .cta-box::after{inset:8px;border-radius:16px}
     .loc-card{padding:36px 24px}
     .foot-grid{grid-template-columns:1fr}
     .btn{font-size:18px;padding:13px 24px}
@@ -349,10 +335,10 @@
   /* ---------- ajustes finos para celular ---------- */
   @media (max-width:600px){
     /* ritmo vertical mais curto */
-    .services{padding:44px 0 64px;scroll-margin-top:44px}
     .about{padding:72px 0 64px}
     .menu-sec{padding:64px 0}
-    .reviews,.insta,.cta,.faq,.location{padding-bottom:72px}
+    .insta,.faq,.location{padding-bottom:72px}
+    .cta{padding:56px 0;margin-bottom:72px}
     .section-head{margin-bottom:32px;gap:14px}
     .h2{font-size:clamp(36px,10.5vw,48px);line-height:1}
     .lead{font-size:15.5px}
@@ -372,36 +358,21 @@
     .hero-actions .btn-ghost{padding:11px 24px;font-size:16px}
     .phone{font-size:28px}
 
-    /* serviços: cards compactos, ícone à esquerda */
-    .cards{gap:12px}
-    .card{display:grid;grid-template-columns:52px 1fr;column-gap:16px;padding:20px 18px;align-items:start}
-    .card .icon{width:48px;height:48px;margin:0;grid-row:span 3}
-    .card .icon svg{width:22px;height:22px}
-    .card::after{font-size:44px;top:12px;right:14px}
-    .card h3{font-size:24px;margin-bottom:4px;padding-right:48px}
-    .card p{font-size:14.5px;line-height:1.5;margin-bottom:0}
-    .card .pill{justify-self:start;margin-top:10px;padding-top:0;border-top:0}
-    .card:hover{transform:none}
 
     /* cardápio */
     .menu-grid{gap:32px}
     .menu-photo{aspect-ratio:4/5;max-width:none}
     .menu-photo img{object-position:center 45%}
     .checks li{font-size:16px}
-    .flavors{margin-bottom:26px}
+    .flavors{margin-bottom:26px;gap:14px}
+    .flv-row{grid-template-columns:1fr;gap:10px}
+    .flv-row li{font-size:15px;padding:7px 12px 6px}
     .price-row .btn{width:100%}
     .price-row{justify-content:center}
 
     /* quem somos */
     .about-grid{gap:40px}
     .about-photos{padding-bottom:56px}
-
-    /* avaliações: carrossel deslizante */
-    .quotes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:0 16px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-    .quotes::-webkit-scrollbar{display:none}
-    .quote{flex:0 0 82%;scroll-snap-align:center}
-    .quotes .reveal{opacity:1;transform:none}
-    .swipe-hint{display:block}
 
     /* instagram: 1 destaque + 4 */
     .ig-grid{gap:8px}
@@ -446,7 +417,6 @@
     .brand b{font-size:18px}
     .phone{font-size:25px}
   }
-  .swipe-hint{display:none;text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
 </style>
 <!-- Vercel Web Analytics (ative em: projeto > Analytics > Enable) -->
 <script>
@@ -464,10 +434,6 @@
   <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14z"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.8-.5zM12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.2 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.1c-.1-1.6-.4-3-1.6-4.2S17.7 1.3 16.1 1.2C14.4 1.1 9.6 1.1 7.9 1.2 6.3 1.3 4.9 1.6 3.7 2.8S2.1 5.5 2 7.1C1.9 8.8 1.9 13.6 2 15.3c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.7.1 6.5.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.2-1.7.2-6.5.1-8.2zm-2.2 10.4a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.8.4s-4.5.1-5.8-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.8s-.1-4.5.4-5.8a3.3 3.3 0 0 1 1.9-1.9c1.3-.5 4.4-.4 5.8-.4s4.5-.1 5.8.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.8s.1 4.5-.4 5.8z"/></symbol>
-  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9.5 5.5 4h13L20 9.5"/><path d="M4 9.5a2.67 2.67 0 0 0 5.33 0 2.67 2.67 0 0 0 5.34 0 2.67 2.67 0 0 0 5.33 0"/><path d="M5.5 12.5V20h13v-7.5"/><path d="M10 20v-4.5h4V20"/></symbol>
-  <symbol id="i-moto" viewBox="0 0 24 24"><circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M8.5 17h7l-2.5-6H9"/><path d="M14 6h2.5l4 8.5"/><path d="M3 13.5c.8-1.6 2.2-2.5 4-2.5h2"/></symbol>
-  <symbol id="i-beer" viewBox="0 0 24 24"><path d="M5 9h10v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/><path d="M15 11.5h2a2 2 0 0 1 2 2V16a2 2 0 0 1-2 2h-2"/><path d="M5 9a2.5 2.5 0 0 1 1.5-4.5 3 3 0 0 1 5.5-.5 2.5 2.5 0 0 1 3 5"/><path d="M8.5 12.5v5M11.5 12.5v5"/></symbol>
-  <symbol id="i-mic" viewBox="0 0 24 24"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/><path d="M9 9.5l11-2"/></symbol>
 </svg>
 
 <!-- HEADER -->
@@ -479,7 +445,6 @@
     </a>
     <ul class="menu" id="menu">
       <li><a href="#inicio">Início</a></li>
-      <li><a href="#servicos">Como pedir</a></li>
       <li><a href="#cardapio">Cardápio</a></li>
       <li><a href="#quem-somos">Quem somos</a></li>
       <li><a href="#duvidas">Dúvidas</a></li>
@@ -514,7 +479,7 @@
         <a class="btn btn-ghost" href="#cardapio">Ver cardápio</a>
       </div>
       <div class="hero-info">
-        <a class="phone" href="tel:+5545999378533"><span class="ico"><svg><use href="#i-phone"/></svg></span>45 99937-8533</a>
+        <a class="phone wa" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener"><span class="ico"><svg><use href="#i-wa"/></svg></span><span class="num"><small>Chama no WhatsApp</small>45 99937-8533</span></a>
         <span class="addr"><svg><use href="#i-pin"/></svg>Avenida Paraná, 1190 · Centro · Matelândia</span>
       </div>
     </div>
@@ -522,43 +487,6 @@
       <div class="halo"></div>
       <img class="logo-big" src="assets/logo.jpg" alt="Logo Filé Miau: gato churrasqueiro de avental mordendo um espetinho, com chamas ao fundo" width="520" height="520">
       <div class="badge"><div><small>Terça a</small><strong>Domingo</strong><small>18h às 23h</small></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVIÇOS -->
-<section class="services" id="servicos">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Como pedir</span>
-      <h2 class="display h2">Do jeito que <span class="orange">você preferir</span></h2>
-      <p class="lead">No salão com a turma ou no conforto de casa: o espetinho chega quentinho do mesmo jeito.</p>
-    </div>
-    <div class="cards">
-      <article class="card reveal">
-        <div class="icon"><svg><use href="#i-store"/></svg></div>
-        <h3>Local</h3>
-        <p>Ambiente agradável no Centro de Matelândia pra comer na hora, direto da brasa.</p>
-        <span class="pill">Terça a domingo</span>
-      </article>
-      <article class="card reveal">
-        <div class="icon"><svg><use href="#i-moto"/></svg></div>
-        <h3>Delivery</h3>
-        <p>Bateu a fome? Chama no WhatsApp e a gente leva o seu pedido até você.</p>
-        <span class="pill">Peça pelo Whats</span>
-      </article>
-      <article class="card reveal">
-        <div class="icon"><svg><use href="#i-beer"/></svg></div>
-        <h3>Happy Hour</h3>
-        <p>Quinta é dia de happy hour. Junta a galera e vem curtir com a gente.</p>
-        <span class="pill">Toda quinta</span>
-      </article>
-      <article class="card reveal">
-        <div class="icon"><svg><use href="#i-mic"/></svg></div>
-        <h3>Música ao vivo</h3>
-        <p>Noites especiais com acústico ao vivo. Fica de olho no Instagram pra saber a próxima data.</p>
-        <span class="pill">Agenda no Insta</span>
-      </article>
     </div>
   </div>
 </section>
@@ -576,7 +504,8 @@
         <li>Acompanha farofa caseira e molho especial</li>
       </ul>
       <div class="flavors" aria-label="Opções de espetinho">
-        <span>Carne</span><span>Frango</span><span>Coração</span><span>Linguiça</span><span>e muito mais</span>
+        <div class="flv-row flv-classic"><span class="flv-label">Clássicos</span><ul><li>Carne</li><li>Frango</li><li>Coração</li><li>Linguiça</li></ul></div>
+        <div class="flv-row flv-special"><span class="flv-label">Especiais</span><ul><li>Queijo coalho</li><li>Kafta</li><li>Frango c/ bacon</li><li>Pão de alho</li><li>Medalhão</li><li>Misto</li></ul></div>
       </div>
       <div class="price-row">
         <a class="btn btn-white" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Pode%20me%20mandar%20o%20card%C3%A1pio%3F" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Pedir o cardápio</a>
@@ -607,50 +536,6 @@
   </div>
 </section>
 
-<!-- AVALIAÇÕES -->
-<section class="reviews" aria-labelledby="rev-title">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Avaliações</span>
-      <h2 id="rev-title" class="display h2">Quem provou <span class="yellow">aprovou</span></h2>
-      <div class="stars" aria-label="Nota máxima: 5 de 5 estrelas">★★★★★</div>
-      <p class="lead">Nota máxima no Google, de acordo com as avaliações dos nossos clientes.</p>
-    </div>
-    <div class="quotes">
-      <article class="quote reveal">
-        <header><span class="avatar">S</span><div><b>Suellen Florencio</b><small>Google</small></div></header>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p>“Comida saborosa e bom atendimento 🙂”</p>
-      </article>
-      <article class="quote reveal">
-        <header><span class="avatar">C</span><div><b>Cristiane Meire</b><small>Google</small></div></header>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p>“Lugar agradável, espetinho maravilhoso.”</p>
-      </article>
-      <article class="quote reveal">
-        <header><span class="avatar">D</span><div><b>Daniel Silva</b><small>Local Guide · Google</small></div></header>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="meta">Refeição no local · R$ 20–40</p>
-      </article>
-      <article class="quote reveal">
-        <header><span class="avatar">N</span><div><b>Nandan Giri</b><small>Local Guide · Google</small></div></header>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="meta">Jantar · R$ 1–20</p>
-      </article>
-      <article class="quote reveal">
-        <header><span class="avatar">G</span><div><b>Gabriel</b><small>Google</small></div></header>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="meta">Avaliação 5 estrelas</p>
-      </article>
-      <a class="quote quote-cta reveal" href="https://www.google.com/maps/search/?api=1&query=Fil%C3%A9+Miau+Espetinhos+Matel%C3%A2ndia" target="_blank" rel="noopener">
-        <b>Já provou?</b>
-        <span>Ver todas as avaliações e deixar a sua no Google →</span>
-      </a>
-    </div>
-    <p class="swipe-hint" aria-hidden="true">Deslize para ver mais avaliações →</p>
-  </div>
-</section>
-
 <!-- INSTAGRAM -->
 <section class="insta" id="instagram" aria-labelledby="ig-title">
   <div class="container">
@@ -670,7 +555,7 @@
       <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/espeto-fogo.jpg" alt="Espetinho de carne suculento na frente do fogo" loading="lazy"></a>
       <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/tabua-espetos.jpg" alt="Tábua de espetinhos com vinagrete e farofa" loading="lazy"></a>
       <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/espetos-frango.jpg" alt="Espetinhos de frango grelhados com salsinha" loading="lazy"></a>
-      <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/espetos-prato.jpg" alt="Espetinhos de frango e coração" loading="lazy"></a>
+      <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/espetos-tabua-fumaca.jpg" alt="Espetinhos de carne e bacon com chimichurri na tábua, saindo fumaça" loading="lazy"></a>
       <a href="https://www.instagram.com/file.miauespetinhos/" target="_blank" rel="noopener" aria-label="Ver no Instagram"><img src="assets/logo.jpg" alt="Logo Filé Miau" loading="lazy"></a>
     </div>
   </div>
@@ -681,13 +566,14 @@
   <div class="container">
     <div class="cta-box reveal">
       <img src="assets/tabua-espetos.jpg" alt="" loading="lazy">
+      <div class="cta-stamp" aria-hidden="true"><div><small>A partir de</small><strong>R$ 11,90</strong></div></div>
       <div class="cta-content">
         <div class="bora">Bora?</div>
         <div class="turma">Chama a turma</div>
         <span class="merece">Vocês merecem esse momento!</span>
         <div class="row">
           <a class="btn btn-primary" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg> Fazer pedido</a>
-          <a class="phone" href="tel:+5545999378533" style="font-size:28px"><span class="ico"><svg><use href="#i-phone"/></svg></span>45 99937-8533</a>
+          <a class="phone wa" href="https://wa.me/5545999378533?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20%F0%9F%98%8B" target="_blank" rel="noopener" style="font-size:26px"><span class="ico"><svg><use href="#i-wa"/></svg></span><span class="num"><small>Chama no WhatsApp</small>45 99937-8533</span></a>
         </div>
       </div>
     </div>
@@ -773,7 +659,6 @@
         <h4>Navegação</h4>
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#servicos">Como pedir</a></li>
           <li><a href="#cardapio">Cardápio</a></li>
           <li><a href="#quem-somos">Quem somos</a></li>
           <li><a href="#duvidas">Dúvidas</a></li>
